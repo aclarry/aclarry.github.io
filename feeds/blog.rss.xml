@@ -1,0 +1,428 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"><channel><title>Andrew Clarry Blog</title><link>http://aclarry.github.io/</link><description></description><lastBuildDate>Sat, 24 Sep 2016 23:40:00 -0400</lastBuildDate><item><title>Getting into Open Source</title><link>http://aclarry.github.io/2016/Sep/getting-into-open-source/</link><description>&lt;p&gt;As I said in my last post, I've wanted to get better at software development,
+and contributing to open source software seems to be a great way to get experience.
+Unfortunately, as many before me have pointed out, getting into open source is scary.
+Not only are the projects themselves intimidating (there's just so much code to take in!),
+but there's the fear that somehow I'm going to end up wasting other developers' time.&lt;/p&gt;
+&lt;p&gt;I want to get over this fear, so I realized pretty early on that I just had to jump
+into something. Of course, that immediately led me to analysis paralysis -
+I had all sorts of choices to make about the project I would jump into.
+Should it be new, with a bunch of big features still needing to be implemented,
+or should it be more mature with a large contributor base?
+What problems should it be solving?
+What kind of problems to I want to solve in contributing (networking,
+numerical analysis, documentation, GUIs, etc.)?
+What language should it be in? What tools should it use?&lt;/p&gt;
+&lt;h1&gt;Just do it&lt;/h1&gt;
+&lt;p&gt;I wasted way too much time in this state, about two years to be precise. 
+Equal parts analysis paralysis and fear of failure kept me from really making an
+effort to contribute. I was always looking for the &lt;em&gt;perfect&lt;/em&gt; project, but I
+never actually knew what "&lt;em&gt;perfect&lt;/em&gt;" meant.&lt;/p&gt;
+&lt;p&gt;A month ago, I put my foot down. My work term was just wrapping up, and I had a
+couple of weeks before classes started, so if I had to, I could devote an entire
+month or so to the project.
+I'm not sure how I did it, but I was able to pick the first open source project
+I came across: the compiler for the Rust programming language.
+With that, I just checked the project's main repo on github, and found a small-ish
+issue that involved changing how the compiler displayed an error message.&lt;/p&gt;
+&lt;p&gt;Obviously, the magic here came somewhere between deciding I should work on something,
+and resigning myself to not care at all about what it was I was working on.
+I should probably figure out how to do that whenever I want to, but for now I'm
+focused on keeping my momentum going and keeping the comfort I have in the open
+source world.&lt;/p&gt;
+&lt;h1&gt;Actually doing work&lt;/h1&gt;
+&lt;p&gt;Somewhat surprisingly (to me), I ran into a few basic development issues along the
+way. Somehow, I hadn't properly forked/cloned the current version of the repository,
+so I only had about 1/2 of the project's code.
+Of course, I wasn't well-acquainted with the Rust compiler's source, and it compiled
+properly, so I wasn't sure off the bat that the problem wasn't me misunderstanding
+the code base. It took me a while to clue in exactly what was wrong.
+I probably should have been prepared for that, but it's an important lesson in 
+always checking your assumptions.&lt;/p&gt;
+&lt;p&gt;On a similar note, I had some issues with building and testing my code.
+The Rust compiler is pretty complex, with lots of options to configure for the
+build, and what seemed to be two ways to actually build the project (a complex
+system of makefiles, and a custom python script).
+I got pretty lost, and I ended up hitting one bug that I think could have been
+solved much faster if I knew exactly what the build system and tests were doing.
+I don't know if this was a failure on my part or the project's (or if it's
+just an inevitable result of having such a complex project), but I'd like to
+try to understand Rust's buid system better, and explore how other large-ish
+projects get buit, too.&lt;/p&gt;
+&lt;p&gt;I was pretty happy with the exposure I got to working with git. I try to use
+git for basically any project I have that's anything more than a throwaway script,
+but I had never used git in a particularly intelligent way. To get my changes
+done in a clean way, there was a lot of rebasing, squashing commits, and force
+updating my pull request. It wasn't anything that I hadn't seen before, but
+using those parts of git on a real life project made them a lot more tangible to me.&lt;/p&gt;
+&lt;h1&gt;Rust in particular&lt;/h1&gt;
+&lt;p&gt;This undertaking wasn't really about Rust, and this post isn't supposed to be about
+Rust either. That said, I feel the need to comment on it, given this was my first
+real bit of Rust that I wrote. Even though I didn't write particularly complex code,
+I had to work to make myself understand Rust's type system and borrow checker.
+That said, from the exposure I've gotten, I really see how Rust makes up for
+deficiencies in C and C++, the main incumbent languages that it's trying to compete with. &lt;/p&gt;
+&lt;p&gt;While I realize that I will need to understand C and C++ pretty well if I want to
+go anywhere in systems-type programming, I hope that I can do some more work with
+Rust. It has some interesting ideas and I could see myself really enjoying programming
+in it!&lt;/p&gt;
+&lt;h1&gt;Things learned&lt;/h1&gt;
+&lt;p&gt;So, I learned some pretty important things from this little adventure:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;You don't need to be a programming genius to get into open source development.
+  Every project has little things that need to be cleaned up, or little
+  bugs that need to be fixed. Big projects may seem scarier, but I get the sense that
+  they have more resources to accomodate new contributors.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;I'm actually reasonably competent at working on software and understanding big projects!
+  It might have taken me more time to finish my little contribution than a seasoned
+  Rust contributor would have, but I made it through in a couple weeks of working on it
+  (very) part time. Nobody laughed me to death, and I got to actually get a contribution
+  merged into a project that tonnes of people use!&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;The importance of just sitting down and doing something. I am blessed/cursed with
+  having a billion little thoughts floating in my head, along with a desire to do
+  stuff that's useful to other people.
+  But I am soooo bad at actually working on any of that, which I think is a combination
+  of the aforementioned analysis paralysis, and an adversion to actually finishing things.
+  Like I said, I don't know what the actual solution to this is - it just kind of
+  magically worked out this time - but it's so important. My plan at the moment is
+  to hope that practice makes perfect, and try to make room for a bunch more little
+  projects over the next year or so.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;So, to wrap up, contributing to open source is way less scary than I thought,
+and if you enjoy the Rust compiler's error message for E0560
+(trying to initialize a struct with fields it doesn't have), you can partially thank me!&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Andrew Clarry</dc:creator><pubDate>Sat, 24 Sep 2016 23:40:00 -0400</pubDate><guid isPermaLink="false">tag:aclarry.github.io,2016-09-24:2016/Sep/getting-into-open-source/</guid></item><item><title>Debrief to Summer 2016</title><link>http://aclarry.github.io/2016/Aug/debrief-to-summer-2016/</link><description>&lt;p&gt;In the spirit of this blog being as much for myself as it is for you, dear reader,
+I thought the end of August would be the perfect time to give myself an update
+of my summer, and also catalogue the aspirations I have for the year to come.&lt;/p&gt;
+&lt;p&gt;So, here that is.&lt;/p&gt;
+&lt;h1&gt;Co-op as a Research Assistant (and almost a full-time student)&lt;/h1&gt;
+&lt;p&gt;I'd be lying if I said I didn't find this summer to be challenging from a work
+perspective. Towards the second half of it, I felt myself getting overwhelmed
+by work.
+I was worried that I wasn't getting as much work done as I should have been,
+which got me stressed out, which made it even harder to get things
+done at the pace I wanted.&lt;/p&gt;
+&lt;p&gt;I think a bunch of things conspired to make me feel like I underperformed.
+The most important seem to have been:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Having shorter working hours&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Needing to juggle work and classes&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;The quite unstructured work environment of academic research&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Being honest with myself, I was probably doing about 75% of the
+work I'd normally get done in a 40-hour work week. Considering I was only working
+75% of a 40-hour work week, this should be totally reasonable.
+I think this highlights a problem I have about managing expectations.
+I had high aspirations for what I would be able to accomplish during my work
+term, but I was also taking three university courses. I should have realized that
+even the most hard working person would find it hard to keep up that kind of
+schedule. I don't think there's any specific remedy for this, other than to
+give myself credit where credit is due, and try to avoid overloading myself
+in the future.
+Either way, I'm happy I came out of this summer with my work more or less finished
+and no classes failed. It's all about the little victories.&lt;/p&gt;
+&lt;p&gt;And definitely, doing research is just hard. This is the first situation
+I've been in where my goal was just to explore the data and document what I found.
+I was a little overwhelmed by choice, constantly trying to test my assumptions
+- is my data heteroskedastic? Should I include interaction terms?
+Should I come up with more variables to include in the model?
+Trying to figure out which questions were relevant was difficult, and I think
+it's the kind of thing you just need practice at before being comfortable with.
+Hopefully, my schedule will allow me to do more of that kind of free-form research
+and data analysis.&lt;/p&gt;
+&lt;p&gt;Speaking of which...&lt;/p&gt;
+&lt;h1&gt;Economics and Statistics, Oh My!&lt;/h1&gt;
+&lt;p&gt;The exciting news for myself this coming year is that I'm finally planning on
+graduating! (For those readers not in the loop, my previous plan was to graduate
+in 2019 - 7 years after starting university in 2012.) At the suggestion of
+the undergraduate administrator in the University of Toronto's Economics Department,
+I am adding a minor in statistics to my studies. This means I have the opportunity
+to get a solid background in probability theory and statistical modelling!&lt;/p&gt;
+&lt;p&gt;I've seen myself get more and more into all aspects of statistics since getting a
+generous 55% in an introductory probability course.
+Obviously, statistics forms a core part of economics, and an absolutely
+fundamental part of industrial engineering. But I've also become interested in
+statistics from more of a mathematical point of view.
+Taking a full year of probability-centric courses should help with that.
+I'll also get my fair share of studying applied statistics, so I'm hoping this
+year will scratch my statistics itch and also prepare me for statistical modelling
+and data analysis in my future.&lt;/p&gt;
+&lt;h3&gt;Also, forest fires&lt;/h3&gt;
+&lt;p&gt;Oh yeah, I'm also signed up to take a course in forest fire management.&lt;/p&gt;
+&lt;p&gt;That'll be fun.&lt;/p&gt;
+&lt;h1&gt;Open Source Aspirations&lt;/h1&gt;
+&lt;p&gt;This month is a bit of a milestone, marking my third anniversary of starting to
+get into programming and the world of computer science in general. I'm quite
+confident in my abilities with using computers to solve problems, but I still
+feel like I have a long way to go in terms of being comfortable with software
+development.&lt;/p&gt;
+&lt;p&gt;Contributing to open-source software has been an aspiration of mine since I
+started my second year of programming, but I just haven't found the time or
+the confidence to jump into it. I'm hoping that this will be my year to start.
+I see working on open-source projects as a way to keep my programming in
+practice, work on my software development skills, and explore topics I actually
+find interesting. I realize that a lot of people have trouble getting started
+contributing to open source, and I suffer from the same kind of fear of doing
+a bad job. It's just something I'll have to get over.&lt;/p&gt;
+&lt;h1&gt;Languages&lt;/h1&gt;
+&lt;p&gt;My goal was to be reasonable proficient in French and Spanish by the end of
+the year.
+It looks like I'm on track to miss both of those marks, but that's no reason
+not to keep trying for proficiency in the languages I want to be proficient at.
+I think I need to stop worrying about working on my reading and writing, and
+instead put Radio-Canada on 24/7.
+My plan is to put 90% of my effort into spoken language, because that's
+really where most of my deficiencies are right now.&lt;/p&gt;
+&lt;p&gt;Either way, I'm hoping 2017 will the
+The Year of Being Actually Passable in French and Spanish.&lt;/p&gt;
+&lt;h1&gt;More blog posts!&lt;/h1&gt;
+&lt;p&gt;It'd be embarassing if this ends up being the last blog post I make for the next
+6 months.
+But I'm liking the idea of doing blog updates to summarize what I've been working
+on and what I've been interested in.
+It's a good way to organize my thoughts and also practe my writing.&lt;/p&gt;
+&lt;p&gt;I still won't have a hard and fast rule for what I'll be writing about. But from
+where I'm standing, it looks like it'll be more data analysis and economics,
+with some new content on software development and related topics.
+Hopefully, those will be coming out at a faster pace than they have been.&lt;/p&gt;
+&lt;h1&gt;Summary&lt;/h1&gt;
+&lt;p&gt;So, that's a wrap! I have a lot I want to get done this year, and I'd be happy
+if I got just half of it done. Expect more blog posts, but don't be too upset
+if they keep taking a while. I'm still trying to understand this whole blogging
+thing.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Andrew Clarry</dc:creator><pubDate>Tue, 23 Aug 2016 11:50:00 -0400</pubDate><guid isPermaLink="false">tag:aclarry.github.io,2016-08-23:2016/Aug/debrief-to-summer-2016/</guid></item><item><title>What's everyone's least favourite season?</title><link>http://aclarry.github.io/2016/Jun/whats-everyones-least-favourite-season/</link><description>&lt;p&gt;So, I got a text out of the blue this morning with my friend asking me to help
+with my purely academic experience in game theory. I like to help others
+(and be distracted from real-world responsibilities), so I agreed to help.&lt;/p&gt;
+&lt;h1&gt;The setup&lt;/h1&gt;
+&lt;p&gt;My friend's office was playing a variation of the el Farol Bar problem, a
+classic problem in game theory.
+Game Theory is a branch of economics, which tries to explain the behaviour of
+people (or "rational actors") when they are put in a "game".
+In game theory, a "game" is any situation where your choices affect the
+people you are playing the game with, and vice-versa. Basically, they are
+situtations in which you have to compete or coordinate your actions with others.&lt;/p&gt;
+&lt;p&gt;In the el Farol Bar problem, players try to coordinate against the group.
+In the original version, people in a small town love going out to the
+el Farol Bar, but the bar gets crowded easily. If more than 60% of
+the town chooses to go to the bar, each person at the bar would rather have
+stayed home.  However, if less than 60% of the town goes, then the people who
+stayed at home would have rather gone to the bar, and the people who went to
+the bar are happy with their choice.  Obviously, there is no situation where
+everybody is happy. Less obviously, there is no single decision that an individual
+can make that will always guarantee they will be happy with their choice.
+Economists call more general versions of this game "Minority Games", and
+they come in all sorts of forms.&lt;/p&gt;
+&lt;p&gt;My friend's workplace was asked the question:
+&lt;em&gt;"What is your favourite season?"&lt;/em&gt; With a couple hours before their answer was
+due, I decided to go overboard. &lt;/p&gt;
+&lt;h1&gt;The theory&lt;/h1&gt;
+&lt;p&gt;Game theory analyzes games such as these by looking
+at their &lt;em&gt;Nash Equlibrium&lt;/em&gt;. A Nash Equlibrium is a situation where each player
+is using &lt;strong&gt;a strategy that they are not better off deviating from&lt;/strong&gt; when the other
+players are playing their own Nash Equilibrium strategy. &lt;/p&gt;
+&lt;p&gt;Classic games like the Prisoner's Dilemma have simple Nash Equlibria.
+In the Prisoner's Dilemma, two suspects are being interrogated by the police;
+they are given the choice to either cooperate with the police and implicate
+the other prisoner, or stay silent.  If both prisoners stay silent, they are
+each given a light sentence, since there is not enough evidence to implicate
+them in the more serious crime.  If one prisoner stays silent but the other
+cooperates, then the prisoner who cooperates is freed, while the prisoner who
+stayed silent is given a very harsh sentence.  If they cooperate
+with the police and implicate one another, they each get a medium sentence.
+The prisoners essentially have no choice but to implicate one another; if they
+stay silent, they are at risk of receiving a very harsh sentence.
+If they implicate the other prisoner, the worst is that they receive a medium
+sentence, but the best case is that they are set free.
+The important part is that, when each prisoner is playing the strategy
+to implicate the other, neither of them wants to stay silent, since they
+will face the much harsher punishment.  Conversely, if the prisoners start off
+staying silent, each one of them wants to cooperate with the police to change
+their light sentence to no sentence.  There is only one equilibrium:
+&lt;em&gt;(cooperate, cooperate)&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img src="http://aclarry.github.io/images/prisoner's-dilemma-illustration.svg" max-width:auto&gt;
+&lt;strong&gt;Figure 1: The Prisoner's Dilemma: A game theory classic&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Our seasons problem is a little more complicated, for a couple of reasons:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;em&gt;We are dealing with real people.&lt;/em&gt; The prisoner's dilemma and other Nash Equlibria
+   in competitive games are notorious for not being easy to reproduce in the real
+   world. So, whatever the Nash Equlibrium is, we can't be guaranteed that
+   choosing it will actually give us a good result in the real world.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;em&gt;In the minority game, there isn't a single equilibrium strategy that
+   everyone can play and be happy with.&lt;/em&gt; Instead, the Nash Equilibrium is a
+   &lt;em&gt;Mixed strategy&lt;/em&gt;, where you choose a certain action randomly. Essentially,
+   the Nash Equlibrium strategy is to pick a season completely at random.
+   However, if our opponents are deviating even a little from this strategy, we
+   want to be able to exploit that deviation.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;One of the problems with trying to think strategically like this is that there
+are many ways you can model your opponents. In the Seasons game, we might
+imagine that none of our opponents actually understand the game, and genuinely
+answer what their favourite season is. People have done polls on this, and they
+seem to suggest that ~40% of our opponents would answer Fall, ~10% Winter, and
+~25% between Spring and Summer each. So, Winter would be the obvious choice.&lt;/p&gt;
+&lt;p&gt;Of course, this is a pretty naive way of modeling the players in our game.
+It is likely that most of these players are not actually playing the equlibrium
+strategy, but it hard to reason about what their actual strategies might be.
+So, how do we to try and get an edge on our opponents in a situation like this?
+My solution to this problem was to take a poll on what the best choice was.&lt;/p&gt;
+&lt;h1&gt;The Data!&lt;/h1&gt;
+&lt;p&gt;Here are the results:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align="left"&gt;Season&lt;/th&gt;
+&lt;th&gt;Count&lt;/th&gt;
+&lt;th&gt;Percentage&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align="left"&gt;Spring&lt;/td&gt;
+&lt;td&gt;5.25&lt;/td&gt;
+&lt;td&gt;25.00%&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align="left"&gt;Summer&lt;/td&gt;
+&lt;td&gt;3.25&lt;/td&gt;
+&lt;td&gt;15.48%&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align="left"&gt;Fall&lt;/td&gt;
+&lt;td&gt;6.25&lt;/td&gt;
+&lt;td&gt;29.76%&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align="left"&gt;Winter&lt;/td&gt;
+&lt;td&gt;6.25&lt;/td&gt;
+&lt;td&gt;29.76%&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;strong&gt;Table 1: Results from my survey&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;(The fraction counts are from a frustrating friend who insisted on the strategy
+of flipping a coin.)&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;From this data, we get an idea of the opinions of what the best strategy is.
+Remember, these people are intended to be a representative sample of my
+friend's opponents in the real game! If we have any hope of gaining an edge,
+we want to use this data as a sample run of the real game.
+Without any solid theory to go on, the best strategy is to run a mock game with
+representative players and choose the strategy which would win in that game.&lt;/p&gt;
+&lt;p&gt;In the end, the small sample my friend and I collected pointed (very weakly)
+to Summer as being the minority choice. With a sample size so small (N = 21),
+we were skeptical of the results. So, on a whim, we went with Spring.&lt;/p&gt;
+&lt;p&gt;The result? Summer was the minority.
+Statisticians everywhere, enjoy your vindication.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align="left"&gt;Season&lt;/th&gt;
+&lt;th&gt;Count&lt;/th&gt;
+&lt;th&gt;Percentage&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align="left"&gt;Spring&lt;/td&gt;
+&lt;td&gt;39&lt;/td&gt;
+&lt;td&gt;27.85%&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align="left"&gt;Summer&lt;/td&gt;
+&lt;td&gt;20&lt;/td&gt;
+&lt;td&gt;14.28%&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align="left"&gt;Fall&lt;/td&gt;
+&lt;td&gt;57&lt;/td&gt;
+&lt;td&gt;40.71%&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align="left"&gt;Winter&lt;/td&gt;
+&lt;td&gt;24&lt;/td&gt;
+&lt;td&gt;17.14%&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align="left"&gt;&lt;strong&gt;Table 2: Results from the actual game&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h1&gt;The Important Question: Why is this interesting?&lt;/h1&gt;
+&lt;p&gt;The minority game in particular is pretty relevant to places like finance.
+Going against the market is usually the path to money, so being able to predict
+how other people will behave can allow you to "beat the market".
+But, &lt;em&gt;everyone&lt;/em&gt; is trying to behave strategically like this, so in practice, it's
+almost impossible to beat the market.&lt;/p&gt;
+&lt;p&gt;I'm not exactly sure why I found this game so interesting.
+I think part of it is the way it requires some backwards thinking.
+My friend was asking my opinion to help choose their strategy, but the
+data-oriented approach would say that my suggestion should be the &lt;em&gt;last&lt;/em&gt;
+answer they should choose!&lt;/p&gt;
+&lt;p&gt;This kind of reminds me of the 
+&lt;a href="http://www.nytimes.com/interactive/science/rock-paper-scissors.html"&gt;rock-paper-scissors bot&lt;/a&gt;, 
+which is able to play rock-paper-scissors pretty damn well by exploiting the 
+patterns that we feeble humans fall into when we try to act strategically. You
+think you're being sneaky when you play a rock three times in a row, but you're
+almost guaranteed that a hundred other people had that same thought too. Memory
+of this is what lets the bot absolutely destroy human players. Try playing the
+bot using your intuition, and see how you do. Then, play using a random number
+generator to make your choice, and be amazed at winning
+1/3 of the time, losing 1/3 of the time, and tieing 1/3 of the time.&lt;/p&gt;
+&lt;p&gt;As humans, we seem adverse to acting totally randomly.
+In fact, when economists simulate these games, the players &lt;em&gt;don't&lt;/em&gt; behave
+randomly; they learn very specific rules with the goal of beating the other
+players.
+But, the evolution of players' strategies makes their behaviour chaotic,
+which means that the end result is a situation very close to the behaviour
+predicted by the mixed (i.e. random) Nash Equlibrium. 
+This is basically what would happen if you got two rock-paper-scissors bots
+to play against each other. They would settle into something that looks very
+similar to making random choices.&lt;/p&gt;
+&lt;p&gt;In the end, we don't know what's behind this result of Summer being the minority
+choice. The game theory literature says that if the same people played the game
+over and over again, they'd eventually tend to a strategy equivalent to choosing
+their season at random.
+Experiments with simpler versions of the minority game find that this does
+happen in reality (see a good summary of the general Minority Game
+&lt;a href="http://news.softpedia.com/news/Minority-Games-38625.shtml"&gt;here&lt;/a&gt; in Softpedia).
+But Game Theory has a harder time predicting what people will do when playing
+the game for the first time, so we're not much closer to understanding what's
+actually going on in the other players' heads.&lt;/p&gt;
+&lt;p&gt;The goal of data analysis is to try to prevent us from needing to act randomly; 
+in this case, the data-oriented approach would have won us the game. Of course, 
+with a sample size of 21, we're not very sure that data was actually going to
+give us the "right" answer. But statistics tells us that if we always follow the
+data, we'll be right more times than if we didn't. Even better, we can be more
+certain the more data we get!&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Andrew Clarry</dc:creator><pubDate>Mon, 20 Jun 2016 11:10:00 -0400</pubDate><guid isPermaLink="false">tag:aclarry.github.io,2016-06-20:2016/Jun/whats-everyones-least-favourite-season/</guid></item><item><title>Cabinet Qualifications</title><link>http://aclarry.github.io/2015/Nov/cabinet-qualifications/</link><description>&lt;p&gt;There's been a lot of &lt;em&gt;discussion&lt;/em&gt; recently about the place of merit in Canada's executive branch.  As a quick recap, the country's Cabinet, made up of elected MPs chosen by the Prime Minister, are the main part of government that oversees the government's operation, proposes laws, and generally calls the shots.  The new Liberal government has found a first in producing the first cabinet in Canada's history which has just as many female ministers as male ones (the Prime Minister also counts as a minister, so there's technically one more male minister.)  That makes 15 female ministers and 15 male ministers chosen from 50 female and 133 male non-Prime Minister MPs.&lt;/p&gt;
+&lt;p&gt;From my side of the computer screen, a substantial part of this &lt;em&gt;discussion&lt;/em&gt; has been people getting various shades of upset about the seemingly arbitrary decision to have a gender-equal cabinet.  One of the more valid arguments made are that there are less female MPs than male MPs, so if we're being fair we would expect to see more male cabinet ministers than female ones.  The idea that has come up again and again is that the makeup of the cabinet should be decided on &lt;em&gt;merit&lt;/em&gt;, not on politics.  &lt;/p&gt;
+&lt;p&gt;Now, I'm inclined to agree with this sentiment.  I like the idea of having competent people being the ones running the government.  But I want to make it clear that there are important considerations aside from having competent MPs.  One of these important things is ability for ministers to act as role models.  Too often, we find relatively few role models for disadvantaged people, because of the disctinction society makes based on the colour of their skin, the community they are from, or the sex of their birth.  A strong set of senior elected officials in the government could serve as amazing role models for the marginalized.  That is why the announcement of Aboriginal ministers was such a great moment, and why the announcement of a gender-equal cabinet should be as well. &lt;/p&gt;
+&lt;p&gt;I'm not going to talk about that.  As I said, I like the idea of having competent people in government, and I was interested in the impact of this non-merit based forcing (however good it may be overall) would have on the qualifications of those who make up the cabinet.&lt;/p&gt;
+&lt;p&gt;To test this question, I went to the Liberal party's website (&lt;a href="https://www.liberal.ca/mp/"&gt;here&lt;/a&gt;), which has a handy list of MPs with their bios.  If you look into the structure of the page, the HTML also includes a bit of extra information on each MP.  &lt;/p&gt;
+&lt;p&gt;At this point, the caveats have to come out.  By using the bios supplied by the Liberal Party's website, I'm not getting a perfect list of qualifications for each MP.  As such, biases introduced from the writers of the bios may find their way into the analysis.  The powers at be designing the party's website may have decided it would be better marketing to describe male and female MPs differently.  However, I figured that it was a safe bet for the party to advertise its leadership based on the qualifications of its candidates firstmost, and so you'd expect that at least on average, MPs will have their most impressive qualifications included in the bios.&lt;/p&gt;
+&lt;p&gt;Knowing the structure, it was a simple matter of scraping out the counts of references to qualifications in each MP's bio and HTML.  The coders of the Liberal party's page seem like they were competent, so it was a breeze.  With the data, all it took was to divide the MPs by gender and get the proportion of MPs with each qualification.  Putting the result in a nice bar chart gets this breakdown:
+&lt;img alt="Proportion for MPs" src="http://aclarry.github.io/images/mps-total.png" /&gt;&lt;/p&gt;
+&lt;p&gt;There's definitely some irregularity in the data.  But I found it remarkable how similar the qualifications of male and female MPs seemed to be.  A higher proportion of male MPs have a background as presidents of organizations than women MPs, but female MPs are more likely to have backgrounds as chairs of organizations than their male counterparts.  Whatever distortions voters had introduced into the selection of MPs with regards to candidates' genders, the result was a pretty evenly qualified group of Liberal MPs.&lt;/p&gt;
+&lt;p&gt;Now, what happens when we only look at those MPs who were selected as ministers?
+&lt;img alt="Proportion for Cabinet Ministers" src="http://aclarry.github.io/images/mps-ministers.png" /&gt;&lt;/p&gt;
+&lt;p&gt;From the (admittedly small) population of ministers, we get a very different picture.  None of the male ministers were described as lawyers, while 4 women were lawyers.  3 men were described as being directors, 5 as board members, and 2 as executives, while the numbers for women are 9 directors, 10 board members, and 5 executives.  Men do outnumber women in some areas, notably with descriptions of "business" and as entrepreneurs.  But male ministers substantially outnumber women ones in the sole qualification of having previously been elected, and of having previously been ministers.&lt;/p&gt;
+&lt;p&gt;The fact that political experience is the main place where male ministers seem to be "outqualifying" female ministers raises some interesting questions.  And the fact that women outqualify men in so many areas is equally surprising.  The pool of women MPs is less than half the size of male MPs, and cabinet ministers make up a whopping 30% of all the Liberals' women in parliament.  If selection was strictly based on qualifications, you'd expect the average female minister to be less qualified than her male counterpart, considering the pool of MPs they are drawn from have a similar distribution of qualifications but unequal sizes.  Instead, you get the opposite of what you'd expect, with female ministers broadly appearing to be more qualified when it comes to matters outside of politics.  This suggests that there may have been a different process for selecting female MPs to be cabinet ministers than male ones.&lt;/p&gt;
+&lt;p&gt;I can't decide what the driver for this process was, but it is something worth discussing.  Most importantly, there's some evidence that the push for a gender-equal cabinet hasn't endangered the qualifications of cabinet ministers.  In fact, it seems like the push for gender equality has actually introduced ministers who are more qualified in matters outside of politics.  Definitely not something to make a fuss about.&lt;/p&gt;
+&lt;p&gt;All of my analysis was done in Python.  This article was inspired both by the topic itself, and the fact that I was itching to find a project to practice my pandas-fu with.  I will be putting my analysis up on github, and may end up writing another post on pandas in the future.&lt;/p&gt;
+&lt;p&gt;If you like this analysis but want it to be a little more robust, you could always research each MP individually and compose a list of their qualifications.  I may supplement the Liberals' provided bios with information from Wikipedia and update this post or write a follow up.  If you're interested in helping, have your people call my people.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Andrew Clarry</dc:creator><pubDate>Sun, 08 Nov 2015 20:30:00 -0500</pubDate><guid isPermaLink="false">tag:aclarry.github.io,2015-11-08:2015/Nov/cabinet-qualifications/</guid></item><item><title>Hello, World!</title><link>http://aclarry.github.io/2015/Nov/hello-world/</link><description>&lt;p&gt;Hey!&lt;/p&gt;
+&lt;p&gt;I'm Andrew Clarry.  You might know me, and that's cool, thanks for reading.  I would probably find it even cooler if you were reading this and you don't know me, but don't take it personally.&lt;/p&gt;
+&lt;p&gt;Continuing on the assumption that you know me, you know I'm fond of the word vomit.  If you pay attention closely, you'd also know that there's a lot of stuff I find really cool.  Economics.  Math.  Politics.  Physics.  Game design.  Math.  Engineering.  Statistics (which happens to be math).  This blog will be about that, and maybe more if I deem it appropriate.  Please follow if you like what you see.  We'll be in touch.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Andrew Clarry</dc:creator><pubDate>Tue, 03 Nov 2015 20:00:00 -0500</pubDate><guid isPermaLink="false">tag:aclarry.github.io,2015-11-03:2015/Nov/hello-world/</guid></item></channel></rss>
