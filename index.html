@@ -21,223 +21,107 @@
 
             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="/whats-everyones-least-favourite-season.html">What's everyone's least favourite season?</a></h1>
+                    <h1 class="entry-title"><a href="/getting-to-rust.html">Getting to Rust</a></h1>
+<footer class="post-info">
+        <span>Wed 28 August 2019</span>
+
+</footer><!-- /.post-info --><p>A few years ago, I decided to hop on the FOSS development train and contribute to a 
+project which seemed pretty neat: the reference compiler for the Rust programming 
+language.  Coming from a small amount of poking at C++ and Arduino from the safety of 
+garbage collected languages, Rust seemed to be full of good ideas. Even as a wee novice 
+programmer, I knew the danger of buffer overflows and use after free. I also appreciated 
+Java's type system checking my work for me, and Rust's familiar syntax and functional 
+programming idioms made it seem like *a cool thing* to try out - a programming language 
+<em>which let me use all the power of my computer</em> like C or C++, but with all the fancy 
+"modern" stuff that came from functional languages and strong type systems.</p>
+<p>As most Rust programmers will warn you, I had a difficult time getting comfortable with 
+Rust.  A lot of the language is very familiar - structs, objects, variable declaration, 
+and so on.  But Rust's main selling point is its strictness about data ownership, and the 
+complexity of the ownership system required me to think hard about exactly where the data 
+was going, something I never really had to do before.  Thankfully, the issue I latched 
+onto in the compiler's github repo was pretty simple - after getting my head around the 
+relevant parts of the vast code base, it mostly amounted to changing some of the classes 
+used and settling on good message text and behaviour. </p>
+<p>Feeling validated (but a little exhausted) by my accepted pull request, I tried some more 
+complex projects.  But my will was utterly broken by another aspect of the Rust language:
+lifetimes. There comes a time in every nontrivial Rust program's life where the compiler 
+can't figure out data ownership on its own.  More or less, it can't keep good enough 
+track of objects to be able to guarantee memory isn't used after the corresponding 
+objects have been destroyed. In these instances, the compiler whips the ball back into 
+the programmer's side of the court and requires some variables to have annotations 
+describing how long they are required to live for. Using these annotations, the compiler 
+can properly track the entire lifecycle of a block of memory and make sure it is not used 
+after it is freed or otherwise rendered unusable.</p>
+<p>To me, this was a brick wall: the syntax was completely alien, I didn't understand how or 
+why the compiler decided where annotations were needed, and when tasked with actually 
+annotating a function it took me ages to figure out what my objects were actually doing 
+and how to describe them in the language of lifetimes. Trying to work through one 
+particular compiler error, I abandoned my fledgeling Tetris clone and moved on to gentler 
+pastures, never to return in earnest.  I've kept up with new releases and some of the big 
+libraries, but I've never felt comfortable enough with Rust to start any projects with 
+it. </p>
+<p>When I took it upon myself to try to get a solid grasp of C and modern C++, some of those 
+gears started turning again.
+Working through some toy C and C++ programs, I was reminded of my struggles getting up to 
+speed with Rust. Some things were familiar: it turns out the syntax and semantics related 
+to pointers aren't just similar in Rust and C; they're basically identical.  But the 
+heart of my problem was that while I understood what Rust was doing and what the problems 
+it tries to solve were, I didn't really understand those problems themselves.  In my time 
+writing software in Python and Java, I never had to worry about when an object would be 
+freed or pointers hanging around in data structures far away from the original object. 
+While I understood that attempting to use memory that has already been freed, or files 
+which have already been closed, was quite a bad thing, I didn't understand how much those 
+issues interfered with the day-to-day software development process. The moment I 
+understood that you didn't have to be an idiot to put a use after free into your code was 
+when I finally <em>understood</em> what Rust was doing. References are just pointers; but when 
+you're designing software, a pointer should never just be a pointer. That's why Rust has 
+the totally separate <code>&amp;</code> and <code>&amp;mut</code> (and, not so coincidentally, why C++11 introduced 
+smart pointers).</p>
+<p>I'm not entirely sure where I'm going with this, but my experience with learning Rust was 
+the first time that I recognized myself being blocked on a topic by a lack of 
+experiential understanding of its background. The novelty of that experience alone was 
+enough to warrant a closer inspection, and after a lot of thought I think it is the 
+programming equivalent of learning a simplified mathematical model before the more 
+accurate (but complex) one. There is only so much new information we can absorb before it 
+needs to be cemented.</p>
+<p>In my case, I am an extreme "learn by doing" person, so upgrading from some toy Rust 
+programs to a medium-sized self guided one seemed like the logical way to get the basics 
+of Rust down. Unfortunately, Rust does not present a way to navigate a larger undertaking 
+like that without wading into its more advanced topics. This is a place where garbage 
+collected languages - and, for their credit, C and archaic C++ - shine. You can write a 
+naïve Python or Go program without worrying about what's happening with your memory or 
+the shape of your call graph, and it'll do something. You'll hit bugs big and small and 
+should never work on software being used by other people, but you'll feel good about the 
+foundations of how to actually get stuff done in those languages. Rust is insistent about 
+hitting you over the head with a sack of bricks until you understand all the things that 
+make Rust uniquely Rust. After that and only after that, can you get up off the ground 
+and do what you originally wanted. At least they have the courtesy to warn you up front – 
+"fighting with the borrow-checker" didn't become a meme for nothing.</p>                </article>
+            </aside><!-- /#featured -->
+                <section id="content" class="body">
+                    <h1>Other articles</h1>
+                    <ol id="posts-list" class="hfeed">
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/whats-everyones-least-favourite-season.html" rel="bookmark"
+                           title="Permalink to What's everyone's least favourite season?">What's everyone's least favourite season?</a></h1>
+                </header>
+
+                <div class="entry-content">
 <footer class="post-info">
         <span>Mon 20 June 2016</span>
 
-</footer><!-- /.post-info --><p>So, I got a text out of the blue this morning with my friend asking me to help
+</footer><!-- /.post-info -->                <p>So, I got a text out of the blue this morning with my friend asking me to help
 with my purely academic experience in game theory. I like to help others
 (and be distracted from real-world responsibilities), so I agreed to help.</p>
 <h1>The setup</h1>
 <p>My friend's office was playing a variation of the el Farol Bar problem, a
 classic problem in game theory.
-Game Theory is a branch of economics, which tries to explain the behaviour of
-people (or "rational actors") when they are put in a "game".
-In game theory, a "game" is any situation where your choices affect the
-people you are playing the game with, and vice-versa. Basically, they are
-situtations in which you have to compete or coordinate your actions with others.</p>
-<p>In the el Farol Bar problem, players try to coordinate against the group.
-In the original version, people in a small town love going out to the
-el Farol Bar, but the bar gets crowded easily. If more than 60% of
-the town chooses to go to the bar, each person at the bar would rather have
-stayed home.  However, if less than 60% of the town goes, then the people who
-stayed at home would have rather gone to the bar, and the people who went to
-the bar are happy with their choice.  Obviously, there is no situation where
-everybody is happy. Less obviously, there is no single decision that an individual
-can make that will always guarantee they will be happy with their choice.
-Economists call more general versions of this game "Minority Games", and
-they come in all sorts of forms.</p>
-<p>My friend's workplace was asked the question:
-<em>"What is your favourite season?"</em> With a couple hours before their answer was
-due, I decided to go overboard. </p>
-<h1>The theory</h1>
-<p>Game theory analyzes games such as these by looking
-at their <em>Nash Equlibrium</em>. A Nash Equlibrium is a situation where each player
-is using <strong>a strategy that they are not better off deviating from</strong> when the other
-players are playing their own Nash Equilibrium strategy. </p>
-<p>Classic games like the Prisoner's Dilemma have simple Nash Equlibria.
-In the Prisoner's Dilemma, two suspects are being interrogated by the police;
-they are given the choice to either cooperate with the police and implicate
-the other prisoner, or stay silent.  If both prisoners stay silent, they are
-each given a light sentence, since there is not enough evidence to implicate
-them in the more serious crime.  If one prisoner stays silent but the other
-cooperates, then the prisoner who cooperates is freed, while the prisoner who
-stayed silent is given a very harsh sentence.  If they cooperate
-with the police and implicate one another, they each get a medium sentence.
-The prisoners essentially have no choice but to implicate one another; if they
-stay silent, they are at risk of receiving a very harsh sentence.
-If they implicate the other prisoner, the worst is that they receive a medium
-sentence, but the best case is that they are set free.
-The important part is that, when each prisoner is playing the strategy
-to implicate the other, neither of them wants to stay silent, since they
-will face the much harsher punishment.  Conversely, if the prisoners start off
-staying silent, each one of them wants to cooperate with the police to change
-their light sentence to no sentence.  There is only one equilibrium:
-<em>(cooperate, cooperate)</em>.</p>
-<p><img src="/images/prisoner's-dilemma-illustration.svg" max-width:auto>
-<strong>Figure 1: The Prisoner's Dilemma: A game theory classic</strong></p>
-<p>Our seasons problem is a little more complicated, for a couple of reasons:</p>
-<ul>
-<li>
-<p><em>We are dealing with real people.</em> The prisoner's dilemma and other Nash Equlibria
-   in competitive games are notorious for not being easy to reproduce in the real
-   world. So, whatever the Nash Equlibrium is, we can't be guaranteed that
-   choosing it will actually give us a good result in the real world.</p>
-</li>
-<li>
-<p><em>In the minority game, there isn't a single equilibrium strategy that
-   everyone can play and be happy with.</em> Instead, the Nash Equilibrium is a
-   <em>Mixed strategy</em>, where you choose a certain action randomly. Essentially,
-   the Nash Equlibrium strategy is to pick a season completely at random.
-   However, if our opponents are deviating even a little from this strategy, we
-   want to be able to exploit that deviation.</p>
-</li>
-</ul>
-<p>One of the problems with trying to think strategically like this is that there
-are many ways you can model your opponents. In the Seasons game, we might
-imagine that none of our opponents actually understand the game, and genuinely
-answer what their favourite season is. People have done polls on this, and they
-seem to suggest that ~40% of our opponents would answer Fall, ~10% Winter, and
-~25% between Spring and Summer each. So, Winter would be the obvious choice.</p>
-<p>Of course, this is a pretty naive way of modeling the players in our game.
-It is likely that most of these players are not actually playing the equlibrium
-strategy, but it hard to reason about what their actual strategies might be.
-So, how do we to try and get an edge on our opponents in a situation like this?
-My solution to this problem was to take a poll on what the best choice was.</p>
-<h1>Data!</h1>
-<p>Here are the results:</p>
-<table>
-<thead>
-<tr>
-<th align="left">Season</th>
-<th>Count</th>
-<th>Percentage</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left">Spring</td>
-<td>5.25</td>
-<td>25.00%</td>
-</tr>
-<tr>
-<td align="left">Summer</td>
-<td>3.25</td>
-<td>15.48%</td>
-</tr>
-<tr>
-<td align="left">Fall</td>
-<td>6.25</td>
-<td>29.76%</td>
-</tr>
-<tr>
-<td align="left">Winter</td>
-<td>6.25</td>
-<td>29.76%</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Table 1: Results from my survey</strong></p>
-<p><em>(The fraction counts are from a frustrating friend who insisted on the strategy
-of flipping a coin.)</em></p>
-<p>From this data, we get an idea of the opinions of what the best strategy is.
-Remember, these people are intended to be a representative sample of my
-friend's opponents in the real game! If we have any hope of gaining an edge,
-we want to use this data as a sample run of the real game.
-Without any solid theory to go on, the best strategy is to run a mock game with
-representative players and choose the strategy which would win in that game.</p>
-<p>In the end, the small sample my friend and I collected pointed (very weakly)
-to Summer as being the minority choice. With a sample size so small (N = 21),
-we were skeptical of the results. So, on a whim, we went with Spring.</p>
-<p>The result? Summer was the minority.
-Statisticians everywhere, enjoy your vindication.</p>
-<table>
-<thead>
-<tr>
-<th align="left">Season</th>
-<th>Count</th>
-<th>Percentage</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left">Spring</td>
-<td>39</td>
-<td>27.85%</td>
-</tr>
-<tr>
-<td align="left">Summer</td>
-<td>20</td>
-<td>14.28%</td>
-</tr>
-<tr>
-<td align="left">Fall</td>
-<td>57</td>
-<td>40.71%</td>
-</tr>
-<tr>
-<td align="left">Winter</td>
-<td>24</td>
-<td>17.14%</td>
-</tr>
-<tr>
-<td align="left"><strong>Table 2: Results from the actual game</strong></td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<h1>The Important Question: Why is this interesting?</h1>
-<p>The minority game in particular is pretty relevant to places like finance.
-Going against the market is usually the path to money, so being able to predict
-how other people will behave can allow you to "beat the market".
-But, <em>everyone</em> is trying to behave strategically like this, so in practice, it's
-almost impossible to beat the market.</p>
-<p>I'm not exactly sure why I found this game so interesting.
-I think part of it is the way it requires some backwards thinking.
-My friend was asking my opinion to help choose their strategy, but the
-data-oriented approach would say that my suggestion should be the <em>last</em>
-answer they should choose!</p>
-<p>This kind of reminds me of the 
-<a href="http://www.nytimes.com/interactive/science/rock-paper-scissors.html">rock-paper-scissors bot</a>, 
-which is able to play rock-paper-scissors pretty damn well by exploiting the 
-patterns that we feeble humans fall into when we try to act strategically. You
-think you're being sneaky when you play a rock three times in a row, but you're
-almost guaranteed that a hundred other people had that same thought too. Memory
-of this is what lets the bot absolutely destroy human players. Try playing the
-bot using your intuition, and see how you do. Then, play using a random number
-generator to make your choice, and be amazed at winning
-1/3 of the time, losing 1/3 of the time, and tieing 1/3 of the time.</p>
-<p>As humans, we seem adverse to acting totally randomly.
-In fact, when economists simulate these games, the players <em>don't</em> behave
-randomly; they learn very specific rules with the goal of beating the other
-players.
-But, the evolution of players' strategies makes their behaviour chaotic,
-which means that the end result is a situation very close to the behaviour
-predicted by the mixed (i.e. random) Nash Equlibrium. 
-This is basically what would happen if you got two rock-paper-scissors bots
-to play against each other. They would settle into something that looks very
-similar to making random choices.</p>
-<p>In the end, we don't know what's behind this result of Summer being the minority
-choice. The game theory literature says that if the same people played the game
-over and over again, they'd eventually tend to a strategy equivalent to choosing
-their season at random.
-Experiments with simpler versions of the minority game find that this does
-happen in reality (see a good summary of the general Minority Game
-<a href="http://news.softpedia.com/news/Minority-Games-38625.shtml">here</a> in Softpedia).
-But Game Theory has a harder time predicting what people will do when playing
-the game for the first time, so we're not much closer to understanding what's
-actually going on in the other players' heads.</p>
-<p>The goal of data analysis is to try to prevent us from needing to act randomly; 
-in this case, the data-oriented approach would have won us the game. Of course, 
-with a sample size of 21, we're not very sure that data was actually going to
-give us the "right" answer. But statistics tells us that if we always follow the
-data, we'll be right more times than if we didn't. Even better, we can be more
-certain the more data we get!</p>                </article>
-            </aside><!-- /#featured -->
-                <section id="content" class="body">
-                    <h1>Other articles</h1>
-                    <ol id="posts-list" class="hfeed">
+Game Theory is a branch of economics …</p>
+                <a class="readmore" href="/whats-everyones-least-favourite-season.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
 
             <li><article class="hentry">
                 <header>
